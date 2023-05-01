@@ -1,0 +1,79 @@
+* {
+          box-sizing: border-box;
+        }
+        
+        body {
+        background-image: url("Sheppard — Christmas Without You.png");
+      background-size: cover;  }
+        
+        form {
+          background-color: #7d5494;
+          border-radius: 5px;
+          padding: 10px;
+          width: 50%;
+          margin: 0 auto;
+        }
+        
+        label {
+          display: block;
+          margin-bottom: 5px;
+          color: white;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        textarea,
+        select {
+          border: 1px solid #ffffff;
+          border-radius: 3px;
+          font-size: 16px;
+          padding: 5px;
+          width: 100%;
+        }
+        
+        .required {
+          color: red;
+        }
+        
+        .radio-group label {
+          display: inline-block;
+          margin-right: 10px;
+        }
+        
+        .date-group label,
+        .date-group input[type="date"] {
+          display: inline-block;
+          vertical-align: middle;
+        }
+        
+        .date-group label {
+          margin-right: 10px;
+        }
+        
+        .radio-group,
+        .date-group {
+          margin-bottom: 10px;
+        }
+        
+        .radio-group:after,
+        .date-group:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+        
+        .submit-button {
+          background-color: #470d6e;
+          border: none;
+          border-radius: 3px;
+          color: white;
+          font-size: 18px;
+          padding: 8.5px;
+          width: 100%;
+          margin-top: 5px;
+          display : inline-block;
+        }
+        
+        .submit-button:hover {
+          background-color: #b24cd7;
+        }
