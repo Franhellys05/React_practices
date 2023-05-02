@@ -94,7 +94,7 @@
   <script type="text/jsx">
     const app = document.getElementById('app');
 
-    const Input = ({required, name, label, type, isReverse=false})=>{
+    const Input = ({required, name, label, type, isReverse=false, value=""})=>{
         if(!isReverse){
           return(
           <>
@@ -102,13 +102,13 @@
               {required && <span className="required">*</span>/*Validating if is requiered*/}
             </label>
 
-            <input type={type} id={name} name={name} required={required} />
+            <input type={type} id={name} name={name} required={required} value={value}/>
           </>
           )
         }
         return(
           <>
-          <input type={type} id={name} name={name} required={required} />
+          <input type={type} id={name} name={name} required={required}value={value} />
             <label htmlFor={name}>{label}
               {required && <span className="required">*</span>/*Validating if is requiered*/}
             </label>
@@ -119,7 +119,7 @@
       const TextArea = ({required, name, label})=> {
         return(
           <>
-            <label for={name}>{label}
+            <label htmlFor={name}>{label}
               {required && <span className="required">*</span>/*Validating if is requiered*/}
             </label>
             <textarea name={name}></textarea>
@@ -142,10 +142,10 @@
     }
 
     //Formulario
-    const Form = ({children})=>{
+    const Form = ({children, name="Formulario de registro"})=>{
      return(
-       <form action="https://formsubmit.co/vfrashell@gmail.com" method="POST">
-        <h2></h2>
+       <form name="name" action="https://formsubmit.co/vfrashell@gmail.com" method="POST">
+        <h2>{name}</h2>
         {children}
        </form>
      )
@@ -168,40 +168,40 @@
      return(
        <div>
          <Form>
-          <Input label="Nombre completo" required={true}/>
-          <Input type="email"  label="Correo electrónico" required={true}/>
-          <Input type="tel"  label="Teléfono"/>
+          <Input label="Nombre completo" required={true} name="Nombre Completo"/>
+          <Input type="email"  label="Correo electrónico" required={true} name="Correo electrónico"/>
+          <Input type="tel"  label="Teléfono" name="Teléfono"/>
           <Container>
             <label>Género</label>
-            <Input label="Masculino" name="genero" type="radio" isReverse={true}/>
-            <Input label="Femenino" name="genero" type="radio" isReverse={true}/>
+            <Input label="Masculino" value="Masculino" name="Género" type="radio" isReverse={true}/>
+            <Input label="Femenino" value="Femenino" name="Género" type="radio" isReverse={true}/>
           </Container>
-          <TextArea label="Dirección" />
-          <Input type="date" label="Fecha de nacimiento" required={true}/>
+          <TextArea name="Dirección" label="Dirección" />
+          <Input name="Fecha de nacimiento" type="date" label="Fecha de nacimiento" required={true}/>
           <Container>
             <label>¿Trabaja actualmente?</label>
-            <Input label="Sí" name="trabaja" type="radio" isReverse={true}/>
-            <Input label="No" name="trabaja" type="radio" isReverse={true}/>
+            <Input label="Sí" value="sí" name="¿Trabaja actualmente?" type="radio" isReverse={true}/>
+            <Input label="No" value="no" name="¿Trabaja actualmente?" type="radio" isReverse={true}/>
           </Container>
           <Input type="text" label="Ocupación"/>
           <Container>
             <label>¿Es casado?</label>
-            <Input label="Sí" name="casado" type="radio" isReverse={true}/>
-            <Input label="No" name="casado" type="radio" isReverse={true}/>
+            <Input label="Sí" value="sí" name="casado" type="radio" isReverse={true}/>
+            <Input label="No" value="no" name="casado" type="radio" isReverse={true}/>
           </Container>
           <>
-          <label html="hijos">¿Tiene hijos?</label>
-          <select id="hijos" name="hijos">
+          <label htmlFor="hijos">¿Tiene hijos?</label>
+          <select id="hijos" name="Tiene Hijos">
             <option value="si">Sí</option>
             <option value="no">No</option>
           </select>      
           </>
           <Container>
             <label>¿Practica algún reporte?</label>
-            <Input label="Sí" name="deporte" type="radio" isReverse={true}/>
-            <Input label="No" name="deporte" type="radio" isReverse={true}/>
+            <Input label="Sí" value="sí" name="deporte" type="radio" isReverse={true}/>
+            <Input label="No" value="no" name="deporte" type="radio" isReverse={true}/>
           </Container>
-          <TextArea label="Comentarios" />
+          <TextArea name="Comentarios" label="Comentarios" />
           <Button type="sumbit" className="submit-button" name="Ënviar" click={onSend}/>
           <Button type="sumbit" className="submit-button" name="Imprimir" click={onPrint}/>
         </Form>
