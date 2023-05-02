@@ -98,6 +98,32 @@
     import React, { useRef } from 'react';
     import emailjs from '@emailjs/browser';
 
+    export const Contacto = () => {
+      const form = useRef();
+    
+      const sendEmail = (e) => {
+        e.preventDefault();
+    
+        emailjs.sendForm('service_y8lpknf', 'template_7shuziv', form.current, '3sGuPaVAWiiq7knrH')
+          .then((result) => {
+              console.log(result.text);
+          }, (error) => {
+              console.log(error.text);
+          });
+      };
+      return (
+    <form ref={form} onSubmit={sendEmail}>
+      <label>Name</label>
+      <input type="text" name="name" />
+      <label>Email</label>
+      <input type="email" name="email" />
+      <label>Message</label>
+      <textarea name="message" />
+      <input type="submit" value="Enviar" />
+    </form>
+  );
+};
+
     const app = document.getElementById('app');
 
     const Input = ({required, name, label, type, isReverse=false, value})=>{
@@ -174,8 +200,8 @@
      return(
        <div>
          <Form>
-          <Input label="Nombre completo" required={true} name="Nombre Completo"/>
-          <Input type="email"  label="Correo electrónico" required={true} name="Correo electrónico"/>
+          <Input label="name" required={true} name="Nombre Completo"/>
+          <Input type="email"  label="email" required={true} name="Correo electrónico"/>
           <Input type="tel"  label="Teléfono" name="Teléfono"/>
           <Container>
             <label>Género</label>
