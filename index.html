@@ -1,89 +1,216 @@
 <!DOCTYPE html>
 <html>
-  
-  <head>
-          <meta charset="UTF-8">
-          <meta http-equiv="X-UA-Compatible" content="IE=edge">
-          <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <link rel="stylesheet" href="style.css">
-          <script src="https://unpkg.com/react@16.14.0/umd/react.development.js"></script>
-          <script src="https://unpkg.com/react-dom@16.14.0/umd/react-dom.development.js"></script>
-          <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-          <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-          <title>Formulario de Registro</title>
-      </head>
 
-      
-      <body>
-        <form action="https://formsubmit.co/vfrashell@gmail.com" method="POST" />
-        
-          <h1>Registro de usuario</h1>
-          
-          <label for="nombre">Nombre completo<span class="required">*</span>:</label>
-          <input type="text" id="nombre" name="nombre" required>
-          
-          <label for="email">Correo electrónico<span class="required">*</span>:</label>
-          <input type="email" id="email" name="email" required>
-          
-          <label for="telefono">Teléfono:</label>
-          <input type="text" id="telefono" name="telefono">
-          
-          <div class="radio-group">
-            <label for="genero">Género:</label>
-            <label><input type="radio" name="genero" value="masculino">Masculino</label>
-            <label><input type="radio" name="genero" value="femenino">Femenino</label>
-          </div>
-          
-          <label for="direccion">Dirección:</label>
-          <textarea id="direccion" name="direccion"></textarea>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
-          <label for="fecha_nacimiento">Fecha de nacimiento:</label>
+  <title>Formulario de Registro</title>
+</head>
 
-          <div class="date-group">
-            <input type="date" id="fecha_nacimiento" name="fecha_nacimiento">
-          </div>
-          
-          <div class="radio-group">
-            <label for="trabaja">¿Trabaja actualmente?</label>
-            <label><input type="radio" name="trabaja" value="si">Sí</label>
-            <label><input type="radio" name="trabaja" value="no">No</label>
-          </div>
-          
-          <label for="ocupacion">Ocupación:</label>
-          <input type="text" id="ocupacion" name="ocupacion">
-          
-          <div class="radio-group">
-            <label for="casado">¿Casado(a)?</label>
-            <label><input type="radio" name="casado" value="si">Sí</label>
-            <label><input type="radio" name="casado" value="no">No</label>
-          </div>
-          
-          <label for="hijos">¿Tiene hijos?</label>
+
+<body>
+
+
+  <!-- <form action="https://formsubmit.co/vfrashell@gmail.com" method="POST">
+
+    <h1>Registro de usuario</h1>
+
+✅    <label for="nombre">Nombre completo<span class="required">*</span>:</label>
+✅    <input type="text" id="nombre" name="nombre" required>
+
+✅    <label for="email">Correo electrónico<span class="required">*</span>:</label>
+✅    <input type="email" id="email" name="email" required>
+
+✅    <label for="telefono">Teléfono:</label>
+✅    <input type="text" id="telefono" name="telefono">
+
+✅    <div class="radio-group">
+✅      <label for="genero">Género:</label>
+✅      <label><input type="radio" name="genero" value="masculino">Masculino</label>
+✅      <label><input type="radio" name="genero" value="femenino">Femenino</label>
+✅    </div>
+
+✅    <label for="direccion">Dirección:</label>
+✅    <textarea id="direccion" name="direccion"></textarea>
+
+✅     <label for="fecha_nacimiento">Fecha de nacimiento:</label>
+
+✅     <div class="date-group">
+✅       <input type="date" id="fecha_nacimiento" name="fecha_nacimiento">
+✅     </div>
+
+✅    <div class="radio-group">
+✅      <label for="trabaja">¿Trabaja actualmente?</label>
+✅      <label><input type="radio" name="trabaja" value="si">Sí</label>
+✅      <label><input type="radio" name="trabaja" value="no">No</label>
+✅    </div>
+
+✅    <label for="ocupacion">Ocupación:</label>
+✅    <input type="text" id="ocupacion" name="ocupacion">
+
+✅    <div class="radio-group">
+✅      <label for="casado">¿Casado(a)?</label>
+✅      <label><input type="radio" name="casado" value="si">Sí</label>
+✅      <label><input type="radio" name="casado" value="no">No</label>
+✅    </div>
+
+✅    <label for="hijos">¿Tiene hijos?</label>
+✅    <select id="hijos" name="hijos">
+✅      <option value="">Seleccione una opción</option>
+✅      <option value="si">Sí</option>
+✅      <option value="no">No</option>
+✅    </select>
+
+✅    <div class="radio-group">
+✅      <label for="deportes">¿Practica algún deporte?</label>
+✅      <label><input type="radio" name="deportes" value="si">Sí</label>
+✅      <label><input type="radio" name="deportes" value="no">No</label>
+✅    </div>
+
+✅    <label for="comentarios">Comentarios:</label>
+✅    <textarea id="comentarios" name="comentarios"></textarea>
+
+✅    <button class="submit-button" type="submit">
+✅      <span class="btnText">Enviar</span>
+✅      <i class="uil uil-navigator"></i></button>
+
+✅    <button class="submit-button" type="button" onclick="save()">
+✅      <span class="btnText">Imprimir</span><i class="uil uil-navigator"> </i>
+✅    </button>
+  </form> -->
+
+  <div id="app">
+
+  </div>
+
+  <script src="https://unpkg.com/react@16.14.0/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16.14.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <script type="text/jsx">
+    const app = document.getElementById('app');
+
+    const Input = ({required, name, label, type, isReverse=false})=>{
+        if(!isReverse){
+          return(
+          <>
+            <label htmlFor={name}>{label}
+              {required && <span className="required">*</span>/*Validating if is requiered*/}
+            </label>
+
+            <input type={type} id={name} name={name} required={required} />
+          </>
+          )
+        }
+        return(
+          <>
+          <input type={type} id={name} name={name} required={required} />
+            <label htmlFor={name}>{label}
+              {required && <span className="required">*</span>/*Validating if is requiered*/}
+            </label>
+          </>
+        )   
+      }
+
+      const TextArea = ({required, name, label})=> {
+        return(
+          <>
+            <label for={name}>{label}
+              {required && <span className="required">*</span>/*Validating if is requiered*/}
+            </label>
+            <textarea name={name}></textarea>
+          </>
+        )
+      }
+
+    const Container = ({children})=> {
+      return(
+        <div className="radio-group">
+          {children}
+        </div>
+      )
+    }
+
+    const Button = ({name, type, className, click})=>{
+      return(
+        <button className={className} type={type} onClick={click}>{name}</button>
+      )
+    }
+
+    //Formulario
+    const Form = ({children})=>{
+     return(
+       <form action="https://formsubmit.co/vfrashell@gmail.com" method="POST">
+        <h2></h2>
+        {children}
+       </form>
+     )
+    }
+
+    function onSend(){
+
+      console.log("Sending form...");
+
+    }
+
+    function onPrint(){
+
+      console.log("Printing form...");
+
+    }
+
+    //aplicación base
+    const App = ()=>{
+     return(
+       <div>
+         <Form>
+          <Input label="Nombre completo" required={true}/>
+          <Input type="email"  label="Correo electrónico" required={true}/>
+          <Input type="tel"  label="Teléfono"/>
+          <Container>
+            <label>Género</label>
+            <Input label="Masculino" name="genero" type="radio" isReverse={true}/>
+            <Input label="Femenino" name="genero" type="radio" isReverse={true}/>
+          </Container>
+          <TextArea label="Dirección" />
+          <Input type="date" label="Fecha de nacimiento" required={true}/>
+          <Container>
+            <label>¿Trabaja actualmente?</label>
+            <Input label="Sí" name="trabaja" type="radio" isReverse={true}/>
+            <Input label="No" name="trabaja" type="radio" isReverse={true}/>
+          </Container>
+          <Input type="text" label="Ocupación"/>
+          <Container>
+            <label>¿Es casado?</label>
+            <Input label="Sí" name="casado" type="radio" isReverse={true}/>
+            <Input label="No" name="casado" type="radio" isReverse={true}/>
+          </Container>
+          <>
+          <label html="hijos">¿Tiene hijos?</label>
           <select id="hijos" name="hijos">
-            <option value="">Seleccione una opción</option>
             <option value="si">Sí</option>
             <option value="no">No</option>
-          </select>
-          
-          <div class="radio-group">
-            <label for="deportes">¿Practica algún deporte?</label>
-            <label><input type="radio" name="deportes" value="si">Sí</label>
-            <label><input type="radio" name="deportes" value="no">No</label>
-          </div>
-          
-          <label for="comentarios">Comentarios:</label>
-          <textarea id="comentarios" name="comentarios"></textarea>
-          
-          <button class="submit-button" type="submit">
-          <span class="btnText">Enviar</span>
-          <i class = "uil uil-navigator"></i></button>
+          </select>      
+          </>
+          <Container>
+            <label>¿Practica algún reporte?</label>
+            <Input label="Sí" name="deporte" type="radio" isReverse={true}/>
+            <Input label="No" name="deporte" type="radio" isReverse={true}/>
+          </Container>
+          <TextArea label="Comentarios" />
+          <Button type="sumbit" className="submit-button" name="Ënviar" click={onSend}/>
+          <Button type="sumbit" className="submit-button" name="Imprimir" click={onPrint}/>
+        </Form>
+       </div>
+     )
+    }
 
-          <button class="submit-button" type="button" onclick="save()">
-          <span class="btnText">Imprimir</span><i class="uil uil-navigator"> </i>
-          </button>
-       
-      </body>
-    </html>
-          
-         
-    
+    ReactDOM.render(<App />, app);
+   </script>
+</body>
+
+</html>
