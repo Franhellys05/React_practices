@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -90,8 +91,13 @@
   <script src="https://unpkg.com/react@16.14.0/umd/react.development.js"></script>
   <script src="https://unpkg.com/react-dom@16.14.0/umd/react-dom.development.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://cdnjs.cloufare.com/ajax/jspdf.min.js"></script>
 
+  
   <script type="text/jsx">
+    import React, { useRef } from 'react';
+    import emailjs from '@emailjs/browser';
+
     const app = document.getElementById('app');
 
     const Input = ({required, name, label, type, isReverse=false, value})=>{
