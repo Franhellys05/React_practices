@@ -91,39 +91,11 @@
   <script src="https://unpkg.com/react@16.14.0/umd/react.development.js"></script>
   <script src="https://unpkg.com/react-dom@16.14.0/umd/react-dom.development.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-  <script src="https://cdnjs.cloufare.com/ajax/jspdf.min.js"></script>
+  
 
   
   <script type="text/jsx">
-    import React, { useRef } from 'react';
-    import emailjs from '@emailjs/browser';
-
-    export const Contacto = () => {
-      const form = useRef();
     
-      const sendEmail = (e) => {
-        e.preventDefault();
-    
-        emailjs.sendForm('service_y8lpknf', 'template_7shuziv', form.current, '3sGuPaVAWiiq7knrH')
-          .then((result) => {
-              console.log(result.text);
-          }, (error) => {
-              console.log(error.text);
-          });
-      };
-      return (
-    <form ref={form} onSubmit={sendEmail}>
-      <label>Name</label>
-      <input type="text" name="name" />
-      <label>Email</label>
-      <input type="email" name="email" />
-      <label>Message</label>
-      <textarea name="message" />
-      <input type="submit" value="Enviar" />
-    </form>
-  );
-};
-
     const app = document.getElementById('app');
 
     const Input = ({required, name, label, type, isReverse=false, value})=>{
